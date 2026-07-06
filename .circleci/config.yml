@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  docker: circleci/docker@2.4.0
+
 jobs:
   build-and-test:
     machine:
@@ -10,8 +13,13 @@ jobs:
       - run: make deps
       - run: make lint
       - run: make test
-      - run: make docker_build
-      - run: make docker_push
+      - docker/check
+      - docker/build:
+          image: wrx98794/hello-world-printer
+          tag: latest
+      - docker/push:
+          image: wrx98794/hello-world-printer
+          tag: latest
 
 workflows:
   basic:
