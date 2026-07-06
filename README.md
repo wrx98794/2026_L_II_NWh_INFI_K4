@@ -84,3 +84,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   $ yum install -y docker-ce
   $ systemctl start docker
   ```
+
+
+# Sprawozdanie_zaliczeniowe - wrx98794
+Poprawka dokumentacji repozytorium.
